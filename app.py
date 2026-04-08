@@ -5,13 +5,10 @@ import os
 app = Flask(__name__)
 
 def get_db_connection():
-    conn = psycopg2.connect(
-        host=os.getenv("PGHOST"),
-        database=os.getenv("PGDATABASE"),
-        user=os.getenv("PGUSER"),
-        password=os.getenv("PGPASSWORD"),
-        port=os.getenv("PGPORT")
-    )
+    DATABASE_URL = os.getenv("DATABASE_URL")
+
+    conn = psycopg2.connect(DATABASE_URL)
+
     return conn
 
 @app.route("/")
