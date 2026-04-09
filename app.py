@@ -13,7 +13,8 @@ def get_db_connection():
 
 @app.route("/")
 def home():
-    return "Student App Running on Railway!"
+    return "Student App Updated Version!"
+
 
 @app.route("/students", methods=["GET"])
 def get_students():
