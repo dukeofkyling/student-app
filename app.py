@@ -13,7 +13,7 @@ def get_db_connection():
 
 @app.route("/")
 def home():
-    return "Student App Updated Version!"
+    return "Student App Running on Railway!"
 
 
 @app.route("/students", methods=["GET"])
@@ -21,7 +21,7 @@ def get_students():
     conn = get_db_connection()
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM student;")
+    cur.execute("SELECT * FROM students;")
     students = cur.fetchall()
 
     cur.close()
