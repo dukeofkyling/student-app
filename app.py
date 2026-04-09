@@ -21,7 +21,7 @@ def get_students():
     conn = get_db_connection()
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM students;")
+    cur.execute("SELECT * FROM student;")
     students = cur.fetchall()
 
     cur.close()
